@@ -1,0 +1,56 @@
+body {
+    font-family: system-ui;
+    background: #f06d06;
+    color:white;
+    text-align: center;
+    transition: all .5s ease-out;
+}
+h1 {
+   --shadow-x: 3px;
+   --shadow-y: 4px;
+   --deg-x: 0deg;
+   --deg-y: 0deg;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: 6vw;
+   text-shadow: black var(--shadow-x) var (--shadow-y) 5px;
+   transform: translateY(50%) translateX(-50%) rotateX(var(--deg-x))
+   rotate(var(--deg-y));
+}
+.show {
+    background: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5vw;
+    padding: 1vw 2vw;
+    font-size: 3vw;
+    transition: all .5s ease-out;
+}
+.ball {
+    --deg: 45deg;
+    --ball-x: 0px;
+    --ball-y: 0px;
+    display: flex;
+    top: var(--ball-y);
+    left: var(--ball-x);
+    position: absolute;
+    background: radial-gradient(circle at 15px 15px, skyblue,darkblue);
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+    z-index: -1;
+}
+.ball:after {
+    content: "";
+    display: block;
+    position: inherit;
+    top: 15px;
+    left: 15px;
+    width: 1.08rem;
+    height: 1.08rem;
+    box-sizing: border-box;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    transform: rotate(var(--deg)) skew(15deg,15deg);
+}
